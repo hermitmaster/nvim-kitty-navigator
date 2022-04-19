@@ -31,11 +31,10 @@ function M.navigate(direction)
 end
 
 function M.setup()
-  
-  vim.keymap.set('n', '<c-h>', function() navigate('h') end, { noremap = true, silent = true })
-  vim.keymap.set('n', '<c-j>', function() navigate('j') end, { noremap = true, silent = true })
-  vim.keymap.set('n', '<c-k>', function() navigate('k') end, { noremap = true, silent = true })
-  vim.keymap.set('n', '<c-l>', function() navigate('l') end, { noremap = true, silent = true })
+  vim.keymap.set('n', '<c-h>', function() require('nvim-kitty-navigator').navigate('h') end, { noremap = true, silent = true })
+  vim.keymap.set('n', '<c-j>', function() require('nvim-kitty-navigator').navigate('j') end, { noremap = true, silent = true })
+  vim.keymap.set('n', '<c-k>', function() require('nvim-kitty-navigator').navigate('k') end, { noremap = true, silent = true })
+  vim.keymap.set('n', '<c-l>', function() require('nvim-kitty-navigator').navigate('l') end, { noremap = true, silent = true })
 end
 
 return M
