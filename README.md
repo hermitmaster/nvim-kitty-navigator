@@ -20,10 +20,11 @@ Vim panes and kitty splits seamlessly.
 ## Installation
 
 packer.nvim:
-``` vim
+
+```vim
 use {
   'hermitmaster/nvim-kitty-navigator',
-  run = 'cp kitty/* ~/.config/kitty/',
+  run = './install',
   config = function()
     require('nvim-kitty-navigator').setup {}
   end
@@ -52,7 +53,7 @@ By default `vim-kitty-navigator` uses the name of the current foreground process
 to detect when it is in a (neo)vim session or not. If that doesn't work, (or if
 you want to support applications other than vim) you can supply a fourth
 optional argument to the `pass_keys.py` call in your `kitty.conf` file to match
-the process name. 
+the process name.
 
 ```conf
 allow_remote_control yes
@@ -73,4 +74,3 @@ kitty --single-instance --listen-on unix:@mykitty
 # Other unix systems:
 kitty --single-instance --listen-on unix:/tmp/mykitty
 ```
-

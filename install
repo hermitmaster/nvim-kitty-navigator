@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+dir=$(cd -- "$(dirname -- "$0")" >/dev/null && pwd)
+kitty_home="${XDG_CONFIG_HOME}/kitty"
+
+for file in "${dir}"/kitty/*.py; do
+  filename=$(basename "${file}")
+  test -L "${kitty_home}/${filename}" || ln -fs "${file}" "${kitty_home}/${filename}"
+done
